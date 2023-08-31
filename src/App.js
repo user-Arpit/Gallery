@@ -40,18 +40,18 @@ export default function App(){
   return(
     <>
     <h1 className="main">Photo Gallery</h1>
-    <div className="articles-container">
+    <div className="art-new">
       {articles.map((article, index)=>(
-        <div key={index} className="article">
+        <div key={index} className="art">
           <img
           src={article.download_url}
           alt="Article Image"
-          className="article-image"
+          className="art-photo"
           />
-          <div className="article-info">
+          <div className="art-info">
             <div className="author">{article.author}</div>
             <div
-            className="thumbs-up">
+            className="thumb">
               <button className="select" onClick={()=>handleThumbsUp(index)}>
                 <FontAwesomeIcon icon={faThumbsUp}/>
                 </button>
@@ -64,7 +64,7 @@ export default function App(){
 
 
       ))}
-      {loading && <div className="loading">Loading...</div>}
+      {loading && <div className="save">Loading...</div>}
     </div>
     </>
   );
